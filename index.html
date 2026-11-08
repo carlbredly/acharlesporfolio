@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ashley Charles – AI Application Developer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#ffffff;--surface:#fff;--ink:#12203a;--muted:#55627a;--line:#cfd8e3;--accent:#2a56e8;--mark:#ffd84a;--good:#13795b;--bad:#b3362f;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Instrument Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Georgia,sans-serif;line-height:1.1;margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1020px;margin:0 auto;padding:0 24px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0;gap:16px;flex-wrap:wrap}
+.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.15rem}
+nav a{margin-left:20px;color:var(--muted);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:48px 0 72px}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.3rem);font-weight:800;letter-spacing:-.02em}
+.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:34em;margin:20px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--ink);color:var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.eval{background:var(--surface);border:2px solid var(--ink);border-radius:14px;padding:22px}
+.eval h2{font-size:1.05rem;margin-bottom:4px}
+.eval .task{color:var(--muted);font-size:.95rem;margin:0 0 16px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.opt{font:inherit;text-align:left;background:var(--bg);color:var(--ink);border:2px solid var(--line);border-radius:10px;padding:14px;cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--accent)}
+.opt b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.05rem;margin-bottom:6px}
+.opt span{font-size:.9rem;color:var(--muted)}
+.opt[aria-pressed="true"]{border-color:var(--good);background:color-mix(in srgb,var(--good) 12%,var(--bg))}
+.opt.wrong{border-color:var(--bad)}
+.verdict{margin:16px 0 0;font-size:.95rem;min-height:3.2em}
+.verdict mark{background:var(--mark);color:#12203a;padding:0 4px;border-radius:3px}
+section{padding:64px 0;border-top:2px solid var(--line)}
+section>.wrap>h2{font-size:clamp(1.8rem,3.5vw,2.5rem);margin-bottom:12px}
+.sub{color:var(--muted);max-width:42em;margin:0 0 32px}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.proj{background:var(--surface);border:2px solid var(--line);border-radius:12px;padding:24px}
+.proj:first-child{grid-column:1/-1;border-color:var(--ink)}
+.proj h3{font-size:1.35rem;margin-bottom:10px}
+.proj p{margin:0 0 14px}
+.stack{display:flex;gap:8px;flex-wrap:wrap;padding:0;margin:0;list-style:none}
+.stack li{font-size:.85rem;padding:3px 10px;border-radius:99px;background:var(--bg);border:1px solid var(--line)}
+.job{display:grid;grid-template-columns:190px 1fr;gap:8px 32px;padding:24px 0;border-bottom:1px solid var(--line)}
+.job:last-child{border-bottom:0}
+.job .when{color:var(--muted);font-size:.95rem}
+.job h3{font-size:1.25rem}
+.job .org{color:var(--muted);margin:2px 0 10px}
+.job ul{margin:0;padding-left:1.1em}
+.job li{margin-bottom:4px}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.skills h3{font-size:1.1rem;margin-bottom:10px}
+.skills ul{list-style:none;margin:0;padding:0}
+.skills li{padding:5px 0;border-bottom:1px solid var(--line)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.two h3{font-size:1.1rem;margin-bottom:10px}
+.two p{margin:0 0 8px}
+footer{border-top:2px solid var(--ink);padding:48px 0 56px}
+footer h2{font-size:clamp(1.8rem,3.5vw,2.5rem);margin-bottom:10px}
+@media (max-width:760px){.hero,.two,.projects,.skills{grid-template-columns:1fr}.job{grid-template-columns:1fr}.opts{grid-template-columns:1fr}nav a{margin:0 16px 0 0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="brand">Ashley Charles</div>
+  <nav aria-label="Sections"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <h1>I build LLM tools and check that they work.</h1>
+    <p class="lead">AI application developer with 2 years of hands-on experience building LLM-powered tools, integrating AI APIs and evaluating software workflows. Native French and Haitian Creole speaker, fluent in English. Open to AI model evaluation, coding task review and multilingual data-quality roles.</p>
+    <div class="btns"><a class="btn primary" href="#projects">See my projects</a><a class="btn" href="#contact">Get in touch</a></div>
+  </div>
+  <div class="eval" role="group" aria-labelledby="evt">
+    <h2 id="evt">Try a response comparison</h2>
+    <p class="task">Task: write a limerick about a dog. Which response is better?</p>
+    <div class="opts">
+      <button class="opt" data-k="A" aria-pressed="false"><b>Response A</b><span>Reads as loose prose, no clear rhyme pattern.</span></button>
+      <button class="opt" data-k="B" aria-pressed="false"><b>Response B</b><span>Five lines with a rhyming pattern and steady rhythm.</span></button>
+    </div>
+    <p class="verdict" id="verdict" aria-live="polite">Pick one to see how I judge it.</p>
+  </div>
+</div>
+
+<section id="projects">
+  <div class="wrap" style="padding:0">
+    <h2>Projects</h2>
+    <p class="sub">Python and JavaScript workflows that classify, draft, log and report.</p>
+    <div class="projects">
+      <article class="proj">
+        <h3>AI Message Classification &amp; Response Automation</h3>
+        <p>A Python agent that receives incoming messages by email or web form, classifies them with an LLM API and drafts replies. It logs each lead to a Google Sheet or database. Scheduled jobs and webhooks (n8n or cron) send daily summary reports and alerts on urgent requests.</p>
+        <ul class="stack"><li>Python</li><li>LLM API</li><li>n8n / cron</li><li>Webhooks</li><li>Google Sheets / SQL</li></ul>
+      </article>
+      <article class="proj">
+        <h3>LLM Customer-Support Chatbot</h3>
+        <p>A chatbot that answers customer questions using FAQ and document content as its knowledge source.</p>
+        <ul class="stack"><li>LLM API</li><li>Prompt engineering</li><li>Document retrieval</li></ul>
+      </article>
+      <article class="proj">
+        <h3>Data Collection &amp; Reporting Scripts</h3>
+        <p>Python scripts that collect data through APIs and produce recurring reports.</p>
+        <ul class="stack"><li>Python</li><li>REST APIs</li><li>pandas</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap" style="padding:0">
+    <h2>Experience</h2>
+    <div class="job">
+      <div class="when">October 2025 – January 2026<br>Full-time, freelance</div>
+      <div><h3>Full-Stack Developer</h3><div class="org">Mastercode</div>
+        <ul><li>Integrated third-party APIs and language-model features for chatbots, automation and data processing.</li><li>Built REST APIs with authentication, user roles and webhook integrations.</li><li>Developed web apps with React and backend services in Node.js, Python and PHP.</li><li>Worked with relational databases and tested application workflows to improve reliability.</li></ul></div>
+    </div>
+    <div class="job">
+      <div class="when">January 2024 – November 2024<br>Part-time</div>
+      <div><h3>Full-Stack Developer, AI Features</h3><div class="org">TechGlobal Solutions</div>
+        <ul><li>Added NLP features (text classification, entity extraction) to web apps with Hugging Face Transformers and spaCy.</li><li>Built and deployed a collaborative-filtering recommendation engine served through a FastAPI endpoint.</li><li>Designed ETL pipelines with Pandas and SQLAlchemy to feed ML models from PostgreSQL.</li><li>Set up model versioning and basic MLOps with MLflow experiment tracking and Docker-based serving.</li><li>Worked with product teams to turn business requirements into ML-driven features.</li></ul></div>
+    </div>
+    <div class="job">
+      <div class="when">Present</div>
+      <div><h3>Package Handler</h3><div class="org">FedEx</div>
+        <ul><li>Load and unload containers carefully and methodically in a fast-paced environment, working with a team under pressure.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap" style="padding:0">
+    <h2>Skills</h2>
+    <p class="sub">Evaluation work needs both technical depth and careful reading.</p>
+    <div class="skills">
+      <div><h3>AI &amp; data</h3><ul><li>Prompt engineering</li><li>LLM API integration</li><li>Text classification</li><li>Entity extraction</li><li>scikit-learn, pandas</li><li>Basic machine learning</li></ul></div>
+      <div><h3>Engineering</h3><ul><li>Python, JavaScript ES6+, PHP</li><li>Node.js / Express, React.js</li><li>REST APIs, JWT, Postman</li><li>PostgreSQL / MySQL, Redis</li><li>Docker, Linux, Git / GitHub</li><li>HTML5, CSS3, Tailwind CSS</li></ul></div>
+      <div><h3>Working style</h3><ul><li>Follows technical specifications precisely</li><li>Detail-oriented review</li><li>Automation</li><li>Teamwork and communication</li><li>Working under pressure</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="background">
+  <div class="wrap two" style="padding:0">
+    <div>
+      <h3>Languages</h3>
+      <p><b>Full professional:</b> English, French, Haitian Creole</p>
+      <p><b>Limited working:</b> Spanish</p>
+    </div>
+    <div>
+      <h3>Education</h3>
+      <p><b>Hagerstown Community College (HCC)</b><br>June 2023</p>
+      <p><b>IMJCB, Institution Mixte Joseph Claude Bernard</b><br>January 2007 – January 2023</p>
+    </div>
+  </div>
+</section>
+</main>
+</div>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let’s work together</h2>
+    <p class="sub" style="margin-bottom:16px">Looking for full-time or contract work in AI model evaluation, coding task review and multilingual data quality.</p>
+    <a class="btn primary" href="#projects">See my projects</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var v=document.getElementById('verdict'),btns=document.querySelectorAll('.opt');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.setAttribute('aria-pressed','false');x.classList.remove('wrong')});
+    if(b.dataset.k==='B'){b.setAttribute('aria-pressed','true');
+      v.innerHTML='<mark>Response B wins.</mark> It keeps the AABBA rhyme scheme and meter that a limerick requires. Response A has no structure to speak of.';
+    }else{b.classList.add('wrong');
+      v.innerHTML='Response A falls short: it reads as disjointed prose and ignores the limerick’s rhyme scheme and meter. Try the other one.';}
+  })});
+})();
+</script>
+</body>
+</html>
